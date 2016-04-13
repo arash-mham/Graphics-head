@@ -1,0 +1,14 @@
+#version 130
+
+out vec4 color;
+in vec2 fragUV;
+in vec3 fragUVW;
+uniform sampler2D textile;
+
+
+
+void main()
+{ 
+color=texture(textile,fragUV);	
+	
+}

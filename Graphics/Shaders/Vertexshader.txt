@@ -1,0 +1,17 @@
+#version 130
+
+in vec3 vertexPosition;
+in vec3 vertexuvw;
+out vec2 fragUV;
+out vec3 fragUVW;
+uniform float time;
+
+void main()
+{
+	gl_Position.x=cos(time)*vertexPosition.x-sin(time)*vertexPosition.z;
+	gl_Position.y=vertexPosition.y;
+	gl_Position.z=sin(time)*vertexPosition.x+cos(time)*vertexPosition.z;
+	gl_Position.w=1.0;
+	fragUV=vec2(vertexuvw.x,vertexuvw.y);
+	fragUVW=vertexuvw;
+}
